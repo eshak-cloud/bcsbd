@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BCS Bangladesh — Business Communications Solution</title>
+  <meta name="description" content="Bangladesh's most reliable business communication solutions. PABX systems, CCTV, access control, structured cabling. Authorized Panasonic dealer. 1 year free service." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0f1e; color: #e8eaf0; }
+
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 2.5rem;
+      background: rgba(10,15,30,0.97);
+      border-bottom: 0.5px solid rgba(59,130,246,0.2);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo { font-size: 18px; font-weight: 500; color: #fff; text-decoration: none; }
+    .logo span { color: #3b82f6; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: #94a3b8; font-size: 14px; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta { background: #3b82f6; color: #fff; border: none; padding: 8px 20px; border-radius: 6px; font-size: 14px; cursor: pointer; transition: background 0.2s; }
+    .nav-cta:hover { background: #2563eb; }
+
+    .hero { padding: 6rem 2.5rem 5rem; max-width: 800px; margin: 0 auto; text-align: center; }
+    .hero-badge { display: inline-block; background: rgba(59,130,246,0.12); color: #60a5fa; border: 0.5px solid rgba(59,130,246,0.3); padding: 5px 16px; border-radius: 20px; font-size: 13px; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: 44px; font-weight: 500; line-height: 1.2; color: #fff; margin-bottom: 1.25rem; }
+    .hero h1 span { color: #3b82f6; }
+    .hero p { font-size: 17px; color: #94a3b8; line-height: 1.7; max-width: 560px; margin: 0 auto 2rem; }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: #3b82f6; color: #fff; border: none; padding: 12px 28px; border-radius: 8px; font-size: 15px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; text-decoration: none; }
+    .btn-primary:hover { background: #2563eb; }
+    .btn-secondary { background: transparent; color: #e8eaf0; border: 0.5px solid rgba(255,255,255,0.2); padding: 12px 28px; border-radius: 8px; font-size: 15px; cursor: pointer; transition: border-color 0.2s; }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.4); }
+
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(59,130,246,0.1); border-top: 0.5px solid rgba(59,130,246,0.15); border-bottom: 0.5px solid rgba(59,130,246,0.15); }
+    .stat { padding: 2rem; text-align: center; background: #0a0f1e; }
+    .stat-number { font-size: 32px; font-weight: 500; color: #3b82f6; }
+    .stat-label { font-size: 13px; color: #64748b; margin-top: 4px; }
+
+    section { padding: 5rem 2.5rem; }
+    .section-title { font-size: 30px; font-weight: 500; color: #fff; margin-bottom: 0.75rem; }
+    .section-sub { font-size: 16px; color: #64748b; max-width: 520px; line-height: 1.6; }
+    .section-label { font-size: 12px; color: #3b82f6; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.75rem; }
+
+    .services { background: #0d1321; }
+    .services-header { max-width: 900px; margin: 0 auto 3rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; max-width: 900px; margin: 0 auto; }
+    .service-card { background: #0b1f24; border: 0.5px solid rgba(20,184,166,0.2); border-radius: 12px; padding: 1.5rem; transition: border-color 0.2s; }
+    .service-card:hover { border-color: rgba(20,184,166,0.5); }
+    .service-icon { width: 40px; height: 40px; border-radius: 8px; background: rgba(20,184,166,0.12); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 20px; color: #2dd4bf; }
+    .service-card h3 { font-size: 15px; font-weight: 500; color: #e2e8f0; margin-bottom: 0.5rem; }
+    .service-card p { font-size: 13px; color: #64748b; line-height: 1.6; }
+
+    .about-wrap { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-body { color: #94a3b8; font-size: 15px; line-height: 1.8; margin-bottom: 1.5rem; }
+    .about-points { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .about-points li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #94a3b8; }
+    .about-points li i { color: #3b82f6; font-size: 16px; }
+    .about-visual { background: #0f1628; border: 0.5px solid rgba(59,130,246,0.2); border-radius: 16px; padding: 2rem; }
+    .about-visual-title { font-size: 13px; color: #64748b; margin-bottom: 1.5rem; }
+    .brand-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .brand-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-radius: 8px; background: rgba(59,130,246,0.06); border: 0.5px solid rgba(59,130,246,0.12); font-size: 13px; color: #94a3b8; }
+    .brand-dot { width: 8px; height: 8px; border-radius: 50%; background: #3b82f6; }
+    .brand-more { font-size: 12px; color: #475569; margin-top: 0.75rem; padding-left: 4px; font-style: italic; }
+
+    .clients { background: #0d1321; text-align: center; }
+    .clients-header { margin-bottom: 3rem; }
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; max-width: 900px; margin: 0 auto; }
+    .testimonial { background: #130f2a; border: 0.5px solid rgba(139,92,246,0.2); border-radius: 12px; padding: 1.5rem; text-align: left; transition: border-color 0.2s; }
+    .testimonial:hover { border-color: rgba(139,92,246,0.45); }
+    .testimonial-text { font-size: 14px; color: #94a3b8; line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .testimonial-author { display: flex; align-items: center; gap: 10px; }
+    .author-avatar { width: 36px; height: 36px; border-radius: 50%; background: rgba(139,92,246,0.2); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; color: #a78bfa; }
+    .author-name { font-size: 13px; font-weight: 500; color: #e2e8f0; }
+    .author-company { font-size: 12px; color: #64748b; }
+
+    .cta-section { text-align: center; border-top: 0.5px solid rgba(59,130,246,0.15); }
+    .cta-section .section-title { font-size: 34px; margin-bottom: 1rem; }
+    .cta-section p { color: #64748b; margin-bottom: 2rem; font-size: 16px; }
+    .contact-cards { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; }
+    .contact-card { background: #111827; border: 0.5px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem 1.75rem; display: flex; align-items: center; gap: 12px; }
+    .contact-card i { font-size: 20px; color: #3b82f6; }
+    .contact-detail-label { font-size: 11px; color: #64748b; }
+    .contact-detail-value { font-size: 14px; color: #e2e8f0; font-weight: 500; }
+
+    footer { background: #000; padding: 2.5rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-left { display: flex; flex-direction: column; gap: 6px; }
+    .footer-logo { font-size: 16px; font-weight: 500; color: #fff; }
+    .footer-logo span { color: #3b82f6; }
+    .footer-tagline { font-size: 12px; color: #475569; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 13px; color: #475569; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #94a3b8; }
+    .footer-copy { font-size: 12px; color: #2d3748; width: 100%; border-top: 0.5px solid #1a1a1a; padding-top: 1.25rem; margin-top: 0.5rem; }
+
+    @media (max-width: 680px) {
+      .hero h1 { font-size: 30px; }
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .about-wrap { grid-template-columns: 1fr; gap: 2rem; }
+      section { padding: 3.5rem 1.25rem; }
+      .stats { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="#">BCS <span>Bangladesh</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-badge"><i class="ti ti-shield-check"></i> Trusted by 1000+ businesses in Bangladesh</div>
+    <h1>Infrastructure that <span>businesses depend on.</span></h1>
+    <p>PABX systems, IP surveillance, access control, and structured cabling — installed right, backed by a full year of free service.</p>
+    <div class="hero-buttons">
+      <a class="btn-primary" href="tel:01712127668"><i class="ti ti-phone"></i> Call us now</a>
+      <button class="btn-secondary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">See our services</button>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-number">1000+</div><div class="stat-label">Installations completed</div></div>
+    <div class="stat"><div class="stat-number">15+</div><div class="stat-label">Years of experience</div></div>
+    <div class="stat"><div class="stat-number">1 Year</div><div class="stat-label">Free service after install</div></div>
+  </div>
+
+  <section id="services" class="services">
+    <div class="services-header">
+      <div class="section-title">The solutions businesses in Bangladesh rely on</div>
+      <div class="section-sub">Authorized Panasonic dealer. Certified engineers. End-to-end installation with full after-sales support.</div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-phone-call"></i></div>
+        <h3>PABX phone systems</h3>
+        <p>Panasonic PABX installation and configuration for offices of all sizes. Full setup and 1-year free service.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-video"></i></div>
+        <h3>CCTV & surveillance</h3>
+        <p>Hikvision and Dahua IP cameras installed and configured for 24/7 security monitoring.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-fingerprint"></i></div>
+        <h3>Access control</h3>
+        <p>Biometric and card-based entry systems from ZK Teco and Anviz for secure premises.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-network"></i></div>
+        <h3>Structured cabling</h3>
+        <p>Data networking and fiber optic cabling built for long-term reliability and performance.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-server"></i></div>
+        <h3>Data centre setup</h3>
+        <p>End-to-end data centre infrastructure design and installation for enterprise clients.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-volume"></i></div>
+        <h3>PA systems</h3>
+        <p>Public address systems for offices, schools, factories, and large commercial spaces.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-wrap">
+      <div class="about-text">
+        <div class="section-label">About BCS</div>
+        <div class="section-title">Over a decade of trusted service in Bangladesh</div>
+        <p class="about-body">Business Communications Solution (BCS) has been one of Bangladesh's leading communication infrastructure providers since our founding. Based in Dhaka, we specialize in practical, reliable solutions that help businesses of all sizes operate efficiently.</p>
+        <ul class="about-points">
+          <li><i class="ti ti-circle-check"></i> Authorized Panasonic dealer</li>
+          <li><i class="ti ti-circle-check"></i> Certified installation engineers</li>
+          <li><i class="ti ti-circle-check"></i> 1 year free service warranty</li>
+          <li><i class="ti ti-circle-check"></i> Serving Dhaka and across Bangladesh</li>
+        </ul>
+      </div>
+      <div class="about-visual">
+        <div class="about-visual-title">Our trusted brands</div>
+        <div class="brand-list">
+          <div class="brand-item"><span>Panasonic</span><div class="brand-dot"></div></div>
+          <div class="brand-item"><span>Hikvision</span><div class="brand-dot"></div></div>
+          <div class="brand-item"><span>Dahua</span><div class="brand-dot"></div></div>
+          <div class="brand-item"><span>ZK Teco</span><div class="brand-dot"></div></div>
+          <div class="brand-item"><span>Anviz</span><div class="brand-dot"></div></div>
+        </div>
+        <div class="brand-more">+ and many more trusted brands</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clients" class="clients">
+    <div class="clients-header">
+      <div class="section-title">What our clients say</div>
+    </div>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p class="testimonial-text">"BCS installed our entire PABX system within two days. Professional team, clean wiring, and they came back for follow-up without us having to ask."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">RH</div>
+          <div><div class="author-name">Rahim Hossain</div><div class="author-company">Garments factory, Gazipur</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">"We needed CCTV across three floors urgently. BCS handled everything in one visit. The cameras are still running perfectly two years later."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SA</div>
+          <div><div class="author-name">Salma Akter</div><div class="author-company">Corporate office, Dhaka</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">"Excellent service and fair pricing. They explained everything clearly and the access control system works exactly as described."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MK</div>
+          <div><div class="author-name">Mahbub Karim</div><div class="author-company">School principal, Narayanganj</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta-section">
+    <div class="section-label">Get in touch</div>
+    <div class="section-title">Ready to get started?</div>
+    <p>Visit our office in Purana Paltan, Dhaka, or call us directly. We respond the same business day.</p>
+    <a class="btn-primary" href="tel:01712127668" style="margin: 0 auto;">Get a free consultation <i class="ti ti-arrow-right"></i></a>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <i class="ti ti-phone"></i>
+        <div><div class="contact-detail-label">Call us</div><div class="contact-detail-value">01712-127668</div></div>
+      </div>
+      <div class="contact-card">
+        <i class="ti ti-mail"></i>
+        <div><div class="contact-detail-label">Email</div><div class="contact-detail-value">sales@bcslbd.com</div></div>
+      </div>
+      <div class="contact-card">
+        <i class="ti ti-map-pin"></i>
+        <div><div class="contact-detail-label">Location</div><div class="contact-detail-value">16 Purana Paltan, Dhaka</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-left">
+      <div class="footer-logo">BCS <span>Bangladesh</span></div>
+      <div class="footer-tagline">Infrastructure that businesses depend on.</div>
+    </div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#clients">Clients</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 Business Communications Solution. All rights reserved. · 16 Purana Paltan, Dhaka-1000</div>
+  </footer>
+
+</body>
+</html>
